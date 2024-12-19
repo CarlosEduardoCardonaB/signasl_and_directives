@@ -1,5 +1,17 @@
 <ul class="list-group">
-  @for (item of menuItems; track $index) {
+  <!-- Menu de la forma tradicional -->
+  <!-- @for (item of menuItems; track $index) {
+    <li
+      class="list-group-item"
+      [routerLink]="[item.route]"
+      routerLinkActive="active">
+      {{item.title}}
+    </li>
+  } -->
+
+
+  <!-- Menu con señales donde invocamos el menuItems como función -->
+  @for (item of menuItems(); track $index) {
     <li
       class="list-group-item"
       [routerLink]="[item.route]"
@@ -8,4 +20,6 @@
     </li>
   }
 
+
 </ul>
+<!-- {{ menuItems() }} -->

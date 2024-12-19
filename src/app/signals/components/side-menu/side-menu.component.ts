@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 interface MenuItem{
   title: string,
@@ -12,11 +12,22 @@ interface MenuItem{
 })
 export class SideMenuComponent {
 
-  public menuItems: MenuItem[]= [
+   //Items del menu de la forma tradicional
+  // public menuItems: MenuItem[]= [
+  //   { title: 'Contador', route: 'counter' },
+  //   { title: 'Mutaciones', route: 'properties' },
+  //   { title: 'Usuario', route: 'user-info' }
+  // ]
+
+  //Items del menu con signals. Un signal me modifica todos los lugares donde se usa este valor y actualiza cálculos, o Htmls donde se usa
+  public menuItems = signal<MenuItem[]>([
     { title: 'Contador', route: 'counter' },
     { title: 'Mutaciones', route: 'properties' },
     { title: 'Usuario', route: 'user-info' }
-  ]
+  ]);
+
+
+
 
 
 
