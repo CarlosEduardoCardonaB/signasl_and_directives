@@ -33,5 +33,10 @@
 
         {{ fullName() }}
       </pre>
+
+      <!-- Este boton es para probar que cuando volvemos a entrar al componente el contador se inicia desde cero, o sea que se limpia solo el signal -->
+      <button class="btn btn-primary" (click)="increaseBy(1)">
+        +1
+      </button>
   </div>
 </div>
